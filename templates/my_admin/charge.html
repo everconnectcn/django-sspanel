@@ -6,10 +6,10 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    充值码列表：
+                    MoneyCode List
                 </h1>
                 <h2 class="subtitle">
-                    添加充值码：
+                    Add a MoneyCode
                 </h2>
             </div>
         </div>
@@ -28,7 +28,7 @@
                     <input name="num" class="input" placeholder="键入充值码数量" required>
                 </div>
                 <div class="control">
-                    <button type="submit" class="button is-outlined is-info">添加</button>
+                    <button type="submit" class="button is-outlined is-info">Add</button>
                 </div>
             </div>
         </form>
@@ -36,8 +36,8 @@
     <div class="box">
         <nav class="pagination">
             {% if contacts.has_previous %}
-            <a class="pagination-previous" href="?page={{ contacts.previous_page_number }}">上一页</a> {% endif %} {% if contacts.has_next%}
-            <a class="pagination-next" href="?page={{ contacts.next_page_number }}">下一页</a> {% endif %}
+            <a class="pagination-previous" href="?page={{ contacts.previous_page_number }}">Previous</a> {% endif %} {% if contacts.has_next%}
+            <a class="pagination-next" href="?page={{ contacts.next_page_number }}">Next</a> {% endif %}
             <p>页码：</p>
             <ul class="pagination-list">
                 {% if first %}
@@ -70,7 +70,7 @@
                 <td>{{ contact.user }}</td>
             </tr>
             {% empty %}
-            <p class="subtitle">没有充值码哟</p>
+            <p class="subtitle">No available MoneyCode</p>
             {% endfor %}
         </table>
     </div>

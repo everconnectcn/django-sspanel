@@ -4,7 +4,7 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    邀请码列表：
+                    List of invite code:
                 </h1>
                 <h2 class="subtitle">
                     {% settings_value "INVITEINFO" %}
@@ -20,13 +20,13 @@
             <table class="table is-striped">
                 <thead>
                     <tr>
-                        <th>创建时间:</th>
-                        <th>邀请码:</th>
+                        <th>created at:</th>
+                        <th>invite code:</th>
                     </tr>
                 </thead>
                 {% for code in code_list %}
                 <tr>
-                    <td>{{ code.created_at|date:"m月d日" }}</td>
+                    <td>{{ code.created_at|date:"m,d,yyyy" }}</td>
                     <td>
                         <a href="{% url 'sspanel:register'%}?invitecode={{code.code}}"code.code }}>
                             {{ code.code }}
@@ -35,7 +35,7 @@
                 </tr>
                 {% empty %}
                 <h2 class="subtitle">
-                    哦哦哦，用完了！
+                    no invite code
                 </h2>
                 {% endfor %}
             </table>

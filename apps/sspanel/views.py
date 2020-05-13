@@ -59,7 +59,7 @@ class RegisterView(View):
                 messages.error(request, "服务出现了点小问题", extra_tags="请尝试或者联系站长~")
                 return render(request, "sspanel/register.html", {"form": form})
             else:
-                messages.success(request, "自动跳转到用户中心", extra_tags="注册成功！")
+                messages.success(request, "自动跳转到UserCenter", extra_tags="注册成功！")
                 user = authenticate(
                     username=form.cleaned_data["username"],
                     password=form.cleaned_data["password1"],
@@ -79,7 +79,7 @@ class UserLogInView(View):
             )
             if user and user.is_active:
                 login(request, user)
-                messages.success(request, "自动跳转到用户中心", extra_tags="登录成功！")
+                messages.success(request, "自动跳转到UserCenter", extra_tags="登录成功！")
                 return HttpResponseRedirect(reverse("sspanel:userinfo"))
             else:
                 messages.error(request, "请重新填写信息！", extra_tags="登录失败！")

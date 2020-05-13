@@ -4,7 +4,7 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    捐赠榜：
+                    Donor List:
                 </h1>
                 <h2 class="subtitle">
                     捐赠的金额会自动同步到账户余额里去~
@@ -33,26 +33,26 @@
                         <div class="control has-icons-left">
                             <div class="control">
                                 <input id="id-input-payinput" class="input" type="number" step="1"
-                                    placeholder="最低不得小于1元: " required>
+                                    placeholder="at least 1 yuan: " required>
                             </div>
                             <div class="icon  is-left">
                                 <i class="fab fa-alipay"></i>
                             </div>
                         </div>
                         <p class="control">
-                            <button class="button is-outlined is-info is-rounded" id="id-button-payrequest">提交</button>
+                            <button class="button is-outlined is-info is-rounded" id="id-button-payrequest">Submit</button>
                         </p>
                     </div>
                     <div id="id-qrcode-box" class="is-hidden">
                         <div id="id-qrcode-canvas"></div>
                         <hr>
                         <p>
-                            <strong>付费完成之后请点击确认！</strong>
+                            <strong>Click Confirm button after payment succeed</strong>
                         </p>
                         <p id="id-msg-line"></p>
                         <div class="control">
                             <button id="id-button-query" class="button is-outlined is-danger is-rounded"
-                                href="#">确认</button>
+                                href="#">Confirm</button>
                         </div>
                     </div>
                 </div>
@@ -74,20 +74,20 @@
                     <table class="table is-striped">
                         <thead>
                             <tr>
-                                <th>捐赠人:</th>
-                                <th>捐赠金额:</th>
-                                <th>捐赠时间:</th>
+                                <th>donor:</th>
+                                <th>ammount donated:</th>
+                                <th>at:</th>
                             </tr>
                         </thead>
                         {% for donate in donatelist %}
                         <tr>
                             <td>{{ donate.user|mix_name:donate.user }}</td>
-                            <td>{{ donate.money }} 元</td>
-                            <td>{{ donate.time|date:"m月d日" }}</td>
+                            <td>{{ donate.money }} yuan</td>
+                            <td>{{ donate.time|date:"m,d,yyyy" }}</td>
                         </tr>
                         {% empty %}
                         <p class="subtitle">
-                            居然还没有人捐赠 要喝西北风了
+                            No donation yet
                         </p>
                         {% endfor %}
                     </table>
@@ -120,7 +120,7 @@
                 swal(info.title, info.subtitle, info.status)
             })
         } else {
-            swal('错误！', '金额必须为整数且最少为一元', 'error')
+            swal('Error', '金额必须为整数且最少为一元', 'error')
         }
     }
     requestButton.click(payrequest)

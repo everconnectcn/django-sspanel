@@ -4,11 +4,8 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    节点列表：
+                    Node List:
                 </h1>
-                <h2 class="subtitle">
-                    来呀伤害呀!
-                </h2>
             </div>
         </div>
     </section>
@@ -24,15 +21,15 @@
                     {% if node.online == True %}
                     <p class="card-header-title">
                         <span class="tag is-primary is-rounded is-hidden-mobile">SS</span>
-                        <span class="tag is-success is-rounded">在线</span>&nbsp;{{ node.name }}
+                        <span class="tag is-success is-rounded">online</span>&nbsp;{{ node.name }}
                     </p>
                     {% else %}
                     <p class="card-header-title">
                         <span class="tag is-primary is-rounded is-hidden-mobile">SS</span>
-                        <span class="tag is-danger is-rounded">掉线</span>&nbsp;{{ node.name }}
+                        <span class="tag is-danger is-rounded">offline</span>&nbsp;{{ node.name }}
                     </p>
                     {% endif %}
-                    <p class="card-header-icon">地区：
+                    <p class="card-header-icon">Region:
                         <span class="icon">
                             <i class="flag-icon flag-icon-{{ node.country }}"></i>
                         </span>
@@ -49,8 +46,8 @@
                     <div class="card-content">
                         <div class="content">
                             <p>{{ node.info }}</p>
-                            {%if node.human_speed_limit != "不限速" %}
-                            <p>限速：<code>{{ node.human_speed_limit }}</code></p>
+                            {%if node.human_speed_limit != "NoLimit" %}
+                            <p>Speed Limit:<code>{{ node.human_speed_limit }}</code></p>
                             {% endif %}
                             {%if node.enlarge_scale != 1.00 %}
                             <p>流量倍率：<code>{{ node.enlarge_scale }}</code></p>
@@ -59,8 +56,8 @@
                     </div>
                     <div class="card-footer">
                         <a class="card-footer-item modal-button" id="id-button-qrcode-{{ node.node_id }}"
-                            data-target="modal-qrcode-ss-{{node.node_id }}-{{ node.name }}">二维码</a>
-                        <a class="card-footer-item modal-button" data-target="ss-modal-config-{{ node.node_id }}">配置</a>
+                            data-target="modal-qrcode-ss-{{node.node_id }}-{{ node.name }}">QRCode</a>
+                        <a class="card-footer-item modal-button" data-target="ss-modal-config-{{ node.node_id }}">Configuration</a>
                         <a class="card-footer-item">
                             <span class="icon">
                                 <i class="fa fa-user">「{{ node.online_user_count }}/{{node.active_tcp_connections}}」</i>
@@ -78,23 +75,23 @@
                             <section class="modal-card-body">
                                 <table class="table is-fullwidth is-bordered is-striped ">
                                     <tr>
-                                        <td class="notification">节点地址:</td>
+                                        <td class="notification">Node Address:</td>
                                         <td class="notification">{{ node.server }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="notification">端口:</td>
+                                        <td class="notification">Port:</td>
                                         <td class="notification">{{ node.ss_port }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="notification">密码:</td>
+                                        <td class="notification">Password:</td>
                                         <td class="notification">{{ node.ss_password }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="notification">加密方式:</td>
+                                        <td class="notification">Encryption Method:</td>
                                         <td class="notification">{{ node.method }}</td>
                                     </tr>
                                 </table>
-                                <p class="subtitle">配置链接：</p>
+                                <p class="subtitle">Configuration Link</p>
                                 <a href={{ node.ss_link }}>手机上用默认浏览器打开点我就可以直接添加配置(SS版)</a>
                             </section>
                         </div>
@@ -104,8 +101,8 @@
                         <div class="modal-background"></div>
                         <div class="modal-card">
                             <header class="modal-card-head">
-                                <p class="modal-card-title">节点:
-                                    <strong>{{ node.name }}</strong> 配置二维码</p>
+                                <p class="modal-card-title">Node:
+                                    <strong>{{ node.name }}</strong> Configuration QRCode</p>
                                 <button class="delete" aria-label="close"></button>
                             </header>
                             <section class="modal-card-body">
@@ -145,15 +142,15 @@
                     {% if node.online == True %}
                     <p class="card-header-title">
                         <span class="tag is-primary is-rounded is-hidden-mobile">V2ray</span>
-                        <span class="tag is-success is-rounded">在线</span>&nbsp;{{ node.name }}
+                        <span class="tag is-success is-rounded">online</span>&nbsp;{{ node.name }}
                     </p>
                     {% else %}
                     <p class="card-header-title">
                         <span class="tag is-primary is-rounded is-hidden-mobile">V2ray</span>
-                        <span class="tag is-danger is-rounded">掉线</span>&nbsp;{{ node.name }}
+                        <span class="tag is-danger is-rounded">offline</span>&nbsp;{{ node.name }}
                     </p>
                     {% endif %}
-                    <p class="card-header-icon">地区：
+                    <p class="card-header-icon">region:
                         <span class="icon">
                             <i class="flag-icon flag-icon-{{ node.country }}"></i>
                         </span>
@@ -177,9 +174,9 @@
                     </div>
                     <div class="card-footer">
                         <a class="card-footer-item modal-button" id="id-button-qrcode-{{ node.node_uid }}"
-                            data-target="modal-qrcode-vmess-{{node.node_uid }}-{{ node.name }}">二维码</a>
+                            data-target="modal-qrcode-vmess-{{node.node_uid }}-{{ node.name }}">QRCode</a>
                         <a class="card-footer-item modal-button"
-                            data-target="vmess-modal-config-{{ node.node_uid }}">配置</a>
+                            data-target="vmess-modal-config-{{ node.node_uid }}">Configuration</a>
                         <a class="card-footer-item">
                             <span class="icon">
                                 <i class="fa fa-user">「{{ node.online_user_count }}」</i>
@@ -199,21 +196,21 @@
                                     {% if node.enable_relay %}
                                     {% for rule in node.relay_rules %}
                                     <tr>
-                                        <td class="notification is-info">节点地址 - {{ rule.remark }}:</td>
+                                        <td class="notification is-info">Node Address - {{ rule.remark }}:</td>
                                         <td class="notification">{{ rule.relay_host }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="notification">端口:</td>
+                                        <td class="notification">Port:</td>
                                         <td class="notification">{{ rule.relay_port }}</td>
                                     </tr>
                                     {% endfor%}
                                     {% else %}
                                     <tr>
-                                        <td class="notification">节点ip:</td>
+                                        <td class="notification">node ip:</td>
                                         <td class="notification">{{ node.server }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="notification">端口:</td>
+                                        <td class="notification">port:</td>
                                         <td class="notification">{{ node.port }}</td>
                                     </tr>
                                     {% endif %}
@@ -231,23 +228,23 @@
                                     </tr>
                                     {% if node.enable_ws %}
                                     <tr>
-                                        <td class="notification">域名:</td>
+                                        <td class="notification">domain:</td>
                                         <td class="notification">{{ node.ws_host }}</td>
                                     </tr>
                                     <tr>
-                                        <td class="notification">路径:</td>
+                                        <td class="notification">path:</td>
                                         <td class="notification">{{ node.ws_path }}</td>
                                     </tr>
                                     {% endif %}
                                 </table>
                                 {% if node.enable_relay %}
                                 {% for rule in node.relay_rules %}
-                                <p class="subtitle">配置链接 - {{ rule.remark }}：</p>
+                                <p class="subtitle">Configuration Link - {{ rule.remark }}：</p>
                                 <a href={{ rule.relay_link }}>手机上用默认浏览器打开点我就可以直接添加配置(Vmess)</a>
                                 <hr>
                                 {% endfor%}
                                 {% else %}
-                                <p class="subtitle">配置链接：</p>
+                                <p class="subtitle">Configuration Link:</p>
                                 <a href={{ node.vmess_link }}>手机上用默认浏览器打开点我就可以直接添加配置(Vmess)</a>
                                 {% endif %}
                             </section>
@@ -258,8 +255,8 @@
                         <div class="modal-background"></div>
                         <div class="modal-card">
                             <header class="modal-card-head">
-                                <p class="modal-card-title">节点:
-                                    <strong>{{ node.name }}</strong> 配置二维码</p>
+                                <p class="modal-card-title">Node:
+                                    <strong>{{ node.name }}</strong> Configuration Link</p>
                                 <button class="delete" aria-label="close"></button>
                             </header>
                             <section class="modal-card-body">

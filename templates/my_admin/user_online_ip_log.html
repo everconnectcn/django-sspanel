@@ -4,10 +4,10 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    在线的用户：
+                    Online User:
                 </h1>
                 <h2 class="subtitle">
-                    每分钟自动更新一次!
+                    updated every minute
                 </h2>
             </div>
         </div>
@@ -17,10 +17,10 @@
     <div class="box">
         <nav class="pagination">
             {% if contacts.has_previous %}
-            <a class="pagination-previous" href="?page={{ contacts.previous_page_number }}">上一页</a> {% endif %}
+            <a class="pagination-previous" href="?page={{ contacts.previous_page_number }}">Previous</a> {% endif %}
             {% if contacts.has_next%}
-            <a class="pagination-next" href="?page={{ contacts.next_page_number }}">下一页</a> {% endif %} {% if page %}
-            <p>页码：</p>
+            <a class="pagination-next" href="?page={{ contacts.next_page_number }}">Next</a> {% endif %} {% if page %}
+            <p>PageNo:</p>
             <ul class="pagination-list">
                 {% if first %}
                 <a href="?page=1" class="pagination-link">1</a>
@@ -44,10 +44,10 @@
         <table class="table is-fullwidth">
             <thead>
                 <tr>
-                    <th>节点ID</th>
-                    <th>用户ID</th>
-                    <th>IP地址</th>
-                    <th>时间</th>
+                    <th>Node ID</th>
+                    <th>User ID</th>
+                    <th>IP</th>
+                    <th>created at</th>
                 </tr>
             </thead>
             {% for contact in contacts %}
@@ -58,7 +58,7 @@
                 <td>{{ contact.created_at }}</td>
             </tr>
             {% empty %}
-            <p class="subtitle">没有用户在线哟</p>
+            <p class="subtitle">no online user right now</p>
             {% endfor %}
         </table>
     </div>

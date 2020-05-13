@@ -12,7 +12,7 @@
     <nav class="navbar is-primary is-spaced">
         <div class="navbar-brand">
             <a class="navbar-item" href="/">
-                <img src="{% static 'img/logo/logo.png' %}" alt="谜之屋logo">
+                <img src="{% static 'img/logo/logo.png' %}" alt="logo">
             </a>
             <div class="navbar-burger burger" data-target="navMenuColorprimary-example">
                 <span></span>
@@ -22,10 +22,10 @@
         </div>
         <div id="navMenuColorprimary-example" class="navbar-menu">
             <div class="navbar-end">
-                <a class="navbar-item" href="{% url 'sspanel:index' %}">首页</a>
-                <a class="navbar-item" href="{% url 'sspanel:help' %}">使用说明</a>
-                <a class="navbar-item" href="{% url 'sspanel:invite_code' %}">邀请码</a>
-                <a class="navbar-item" href="{% url 'sspanel:client' %}">客户端</a>
+                <a class="navbar-item" href="{% url 'sspanel:index' %}">Index</a>
+                <a class="navbar-item" href="{% url 'sspanel:help' %}">User Guide</a>
+                <a class="navbar-item" href="{% url 'sspanel:invite_code' %}">Invite Code</a>
+                <a class="navbar-item" href="{% url 'sspanel:client' %}">Client</a>
                 <div class="navbar-item has-dropdown is-hoverable is-hidden-mobile">
                     <span class="navbar-item">
                         <a class="button is-primary is-inverted" href="{% url 'sspanel:userinfo' %}">
@@ -40,37 +40,37 @@
                             <span class="icon">
                                 <i class="fa fa-users"></i>
                             </span>
-                            <span>用户中心</span>
+                            <span>UserCenter</span>
                         </a>
                         <hr class="navbar-divider">
                         <a class="navbar-item" href="{% url 'sspanel:logout' %}">
                             <span class="icon">
                                 <i class="fa fa-sign-out"></i>
                             </span>
-                            <span>注销登录</span>
+                            <span>Logout</span>
                         </a>
                     </div>
                 </div>
                 <!-- 手机界面菜单-->
                 <div class="is-hidden-tablet">
-                    <a class="navbar-item is-active">面板管理</a>
-                    <a class="navbar-item" href="{% url 'sspanel:system_status' %}">系统状态</a>
-                    <a class="navbar-item" href="{% url 'sspanel:admin_invite' %}">邀请相关</a>
-                    <a class="navbar-item" href="{% url 'sspanel:admin_announcements' %}">公告管理</a>
-                    <a class="navbar-item" href="{% url 'sspanel:admin_tickets' %}">工单管理</a>
-                    <a class="navbar-item is-active">节点管理</a>
-                    <a class="navbar-item" href="{% url 'sspanel:admin_node_list' %}">节点列表</a>
-                    <a class="navbar-item" href="{% url 'sspanel:user_online_ip_log' %}">在线IP</a>
-                    <a class="navbar-item is-active">交易管理</a>
+                    <a class="navbar-item is-active">Panel Management</a>
+                    <a class="navbar-item" href="{% url 'sspanel:system_status' %}">System Status</a>
+                    <a class="navbar-item" href="{% url 'sspanel:admin_invite' %}">Invitation Related</a>
+                    <a class="navbar-item" href="{% url 'sspanel:admin_announcements' %}">Announcement Management</a>
+                    <a class="navbar-item" href="{% url 'sspanel:admin_tickets' %}">Ticket Management</a>
+                    <a class="navbar-item is-active">Node Management</a>
+                    <a class="navbar-item" href="{% url 'sspanel:admin_node_list' %}">Node List</a>
+                    <a class="navbar-item" href="{% url 'sspanel:user_online_ip_log' %}">IP online</a>
+                    <a class="navbar-item is-active">Transaction Management</a>
                     <a class="navbar-item" href="{% url 'sspanel:admin_charge' %}">充值管理</a>
-                    <a class="navbar-item" href="{% url 'sspanel:admin_goods' %}">商品管理</a>
-                    <a class="navbar-item" href="{% url 'sspanel:purchase_history' %}">购买记录</a>
-                    <a class="navbar-item is-active">用户管理</a>
-                    <a class="navbar-item" href="{% url 'sspanel:admin_user_list' %}">用户列表</a>
-                    <a class="navbar-item" href="{% url 'sspanel:admin_user_status' %}">用户分析</a>
+                    <a class="navbar-item" href="{% url 'sspanel:admin_goods' %}">Goods Management</a>
+                    <a class="navbar-item" href="{% url 'sspanel:purchase_history' %}">Purchase log</a>
+                    <a class="navbar-item is-active">User Management</a>
+                    <a class="navbar-item" href="{% url 'sspanel:admin_user_list' %}">User List</a>
+                    <a class="navbar-item" href="{% url 'sspanel:admin_user_status' %}">User Analysis</a>
                     <a class="navbar-item is-active">面板跳转</a>
-                    <a class="navbar-item" href="/admin">数据后台</a>
-                    <a class="navbar-item" href="{% url 'sspanel:userinfo' %}">用户面板</a>
+                    <a class="navbar-item" href="/admin">Data Panel</a>
+                    <a class="navbar-item" href="{% url 'sspanel:userinfo' %}">User Panel</a>
                 </div>
             </div>
         </div>
@@ -82,9 +82,6 @@
                 <h1 class="title">
                     {% settings_value "SUBTITLE" %}
                 </h1>
-                <h2 class="subtitle">
-                    你说会发现什么呢？
-                </h2>
             </div>
         </div>
     </section>
@@ -96,56 +93,56 @@
                     {% if user.is_authenticated %}
                     <aside class="menu">
                         <p class="menu-label">
-                            面板管理
+                            Panel Management
                         </p>
                         <ul class="menu-list">
                             <li>
-                                <a href="{% url 'sspanel:system_status' %}">系统状态</a>
+                                <a href="{% url 'sspanel:system_status' %}">System Status</a>
                             </li>
                             <li>
-                                <a href="{% url 'sspanel:admin_invite' %}">邀请相关</a>
+                                <a href="{% url 'sspanel:admin_invite' %}">Invitation Related</a>
                             </li>
                             <li>
-                                <a href="{% url 'sspanel:admin_announcements' %}">公告管理</a>
+                                <a href="{% url 'sspanel:admin_announcements' %}">Announcement Management</a>
                             </li>
                             <li>
-                                <a href="{% url 'sspanel:admin_tickets' %}">工单管理</a>
+                                <a href="{% url 'sspanel:admin_tickets' %}">Ticket Ma</a>
                             </li>
                         </ul>
                         <p class="menu-label">
-                            节点管理
+                            Node Management
                         </p>
                         <ul class="menu-list">
                             <li>
-                                <a href="{% url 'sspanel:admin_node_list' %}">节点列表</a>
+                                <a href="{% url 'sspanel:admin_node_list' %}">Node List</a>
                             </li>
                             <li>
-                                <a href="{% url 'sspanel:user_online_ip_log' %}">在线IP</a>
+                                <a href="{% url 'sspanel:user_online_ip_log' %}">online IP</a>
                             </li>
                         </ul>
                         <p class="menu-label">
-                            交易管理
+                            Transaction Management
                         </p>
                         <ul class="menu-list">
                             <li>
                                 <a href="{% url 'sspanel:admin_charge' %}">充值管理</a>
                             </li>
                             <li>
-                                <a href="{% url 'sspanel:admin_goods' %}">商品管理</a>
+                                <a href="{% url 'sspanel:admin_goods' %}">Goods Management</a>
                             </li>
                             <li>
-                                <a href="{% url 'sspanel:purchase_history' %}">购买记录</a>
+                                <a href="{% url 'sspanel:purchase_history' %}">Purchase Log</a>
                             </li>
                         </ul>
                         <p class="menu-label">
-                            用户管理
+                            User Management
                         </p>
                         <ul class="menu-list">
                             <li>
-                                <a href="{% url 'sspanel:admin_user_list' %}">用户列表</a>
+                                <a href="{% url 'sspanel:admin_user_list' %}">User List</a>
                             </li>
                             <li>
-                                <a href="{% url 'sspanel:admin_user_status' %}">用户分析</a>
+                                <a href="{% url 'sspanel:admin_user_status' %}">User Analysis</a>
                             </li>
                         </ul>
                         <p class="menu-label">
@@ -153,12 +150,12 @@
                         </p>
                         <ul class="menu-list">
                             <li>
-                                <a href="/admin">数据后台</a>
+                                <a href="/admin">Data Panel</a>
                             </li>
                         </ul>
                         <ul class="menu-list">
                             <li>
-                                <a href="{% url 'sspanel:userinfo' %}">用户面板</a>
+                                <a href="{% url 'sspanel:userinfo' %}">User Panel</a>
                             </li>
                         </ul>
                         {% endif %}

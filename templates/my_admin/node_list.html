@@ -4,10 +4,10 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    节点列表：
+                    Node List:
                 </h1>
                 <h2 class="subtitle">
-                    添加或者删除节点：
+                   Edit or delete nodes:
                 </h2>
             </div>
         </div>
@@ -18,15 +18,15 @@
         <table class="table is-fullwidth">
             <thead>
                 <tr>
-                    <th>操作</th>
-                    <th>ID/类型</th>
-                    <th>名字</th>
-                    <th>地址</th>
-                    <th>等级</th>
-                    <th>上线</th>
+                    <th>Operation</th>
+                    <th>ID/Type</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Level</th>
+                    <th>Online</th>
                     <th>人/连接</th>
-                    <th>已用/总流量</th>
-                    <th>限速</th>
+                    <th>Used/Total Traffic</th>
+                    <th>Speed Limit</th>
                     <th>对接</th>
                 </tr>
             </thead>
@@ -35,11 +35,11 @@
                 <td>
                     <p class="control">
                         <a class="button is-info modal-button"
-                            href="{% url 'sspanel:admin_node_detail' node_type=node.node_type node_id=node.node_id  %}">编辑</a>
+                            href="{% url 'sspanel:admin_node_detail' node_type=node.node_type node_id=node.node_id  %}">Edit</a>
                     </p>
                     <p class="control">
                         <a class="button is-danger modal-button"
-                            data-target="modal-delete-{{ node.node_type }}-{{ node.node_id }}">删除</a>
+                            data-target="modal-delete-{{ node.node_type }}-{{ node.node_id }}">Delete</a>
                     </p>
                 </td>
                 <td>{{ node.node_id }}/{{ node.node_type }}</td>

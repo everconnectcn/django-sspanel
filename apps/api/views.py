@@ -342,7 +342,7 @@ def purchase(request):
         )
     else:
         return JsonResponse(
-            {"title": "购买成功", "status": "success", "subtitle": "请在用户中心检查最新信息"}
+            {"title": "购买成功", "status": "success", "subtitle": "请在UserCenter检查最新信息"}
         )
 
 

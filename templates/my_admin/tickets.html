@@ -5,11 +5,8 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    工单一览：
+                    Ticket List:
                 </h1>
-                <h2 class="subtitle">
-                    是是是，来看看都发生了什么
-                </h2>
             </div>
         </div>
     </section>
@@ -17,21 +14,21 @@
 <div class="column is-12">
     <div class="box">
         <div class="content">
-            <p class="subtitle">所有工单:</p>
+            <p class="subtitle">All Tickets:</p>
             <table class="table is-striped">
                 <thead>
                     <tr>
-                        <th>操作:</th>
-                        <th>User:</th>
-                        <th>时间:</th>
-                        <th>标题:</th>
-                        <th>状态</th>
+                        <th>operation:</th>
+                        <th>user:</th>
+                        <th>created at:</th>
+                        <th>title:</th>
+                        <th>status:</th>
                     </tr>
                 </thead>
                 {% for record in ticket %}
                 <tr>
                     <td>
-                        <a class="button is-danger" href="{% url 'sspanel:admin_ticket_detail' record.pk %}">处理</a>
+                        <a class="button is-danger" href="{% url 'sspanel:admin_ticket_detail' record.pk %}">process</a>
                     </td>
                     <td>{{ record.user }}</td>
                     <td>{{ record.time }}</td>
@@ -40,7 +37,7 @@
                 </tr>
                 {% empty %}
                 <h2 class="subtitle">
-                    没有人提意见，真棒！
+                    no tickets yet
                 </h2>
                 {% endfor %}
             </table>

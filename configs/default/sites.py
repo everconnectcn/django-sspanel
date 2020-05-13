@@ -28,8 +28,8 @@ MIN_CHECKIN_TRAFFIC = 10 * MB
 MAX_CHECKIN_TRAFFIC = 200 * MB
 
 # 网站title
-TITLE = "谜之屋"
-SUBTITLE = "秘密的小屋"
+TITLE = "EverConnect"
+SUBTITLE = "connect to every corner of the world"
 
 # 用户邀请返利比例
 INVITE_PERCENT = 0.2
@@ -37,7 +37,7 @@ INVITE_PERCENT = 0.2
 INVITE_NUM = 5
 
 # 网站邀请界面提示语
-INVITEINFO = "邀请码实时更新，如果用完了就没了"
+INVITEINFO = "Invite codes are updated in realtime, 如果用完了就没了"
 
 
 # 部分API接口TOKEN

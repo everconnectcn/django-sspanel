@@ -4,11 +4,8 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    工单编辑：
+                    Edit Ticket:
                 </h1>
-                <h2 class="subtitle">
-                    反悔了一次
-                </h2>
             </div>
         </div>
     </section>
@@ -18,15 +15,15 @@
         <form class="form" method="post">
             {% csrf_token %}
             <div class="control is-loading">
-                <span class="tag is-info">标题:</span>
-                <textarea class="textarea" name="title" type="text" placeholder="标题" rows="1" maxlength="32">{{ ticket.title }}</textarea>
+                <span class="tag is-info">Title:</span>
+                <textarea class="textarea" name="title" type="text" placeholder="Title" rows="1" maxlength="32">{{ ticket.title }}</textarea>
                 <br>
-                <span class="tag is-info">内容:</span>
+                <span class="tag is-info">Content:</span>
                 <textarea class="textarea" id="id-markdown-body" name="body" type="text" rows="10">{{ ticket.body }}</textarea>
             </div>
             <div class="is-grouped">
-                <button type="submit" class="button is-danger is-outlined ">确认</button>
-                <a class="button is-success is-outlined" href="{% url 'sspanel:tickets' %}">取消</a>
+                <button type="submit" class="button is-danger is-outlined ">Confirm</button>
+                <a class="button is-success is-outlined" href="{% url 'sspanel:tickets' %}">Cancel</a>
             </div>
         </form>
     </div>

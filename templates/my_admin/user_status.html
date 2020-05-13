@@ -4,11 +4,8 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    用户分析：
+                    User Analysis:
                 </h1>
-                <h2 class="subtitle">
-                    站内最大土豪即将揭晓！
-                </h2>
             </div>
         </div>
     </section>
@@ -18,25 +15,25 @@
         <div class="tile is-parent">
             <article class="tile is-child box">
                 <p class="title">{{ total_user_num }}</p>
-                <p class="subtitle">用户总数</p>
+                <p class="subtitle">Total User</p>
             </article>
         </div>
         <div class="tile is-parent">
             <article class="tile is-child box">
                 <p class="title">{{ alive_user_count }}</p>
-                <p class="subtitle">在线人数</p>
+                <p class="subtitle">Online User</p>
             </article>
         </div>
         <div class="tile is-parent">
             <article class="tile is-child box">
                 <p class="title">{{ today_checked_user_count }}</p>
-                <p class="subtitle">今日签到</p>
+                <p class="subtitle">Checked in Today</p>
             </article>
         </div>
         <div class="tile is-parent">
             <article class="tile is-child box">
                 <p class="title">{{ today_register_user_count }}</p>
-                <p class="subtitle">今日注册</p>
+                <p class="subtitle">Registered Today</p>
             </article>
         </div>
     </div>
@@ -51,8 +48,8 @@
                 <table class="table is-hoverable is-fullwidth">
                     <thead>
                         <tr>
-                            <th>用户名</th>
-                            <th>流量</th>
+                            <th>User</th>
+                            <th>Traffic</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -76,7 +73,7 @@
                 <table class="table is-hoverable is-fullwidth">
                     <thead>
                         <tr>
-                            <th>用户名</th>
+                            <th>User</th>
                             <th>金额</th>
                         </tr>
                     </thead>
@@ -84,7 +81,7 @@
                         {% for u in rich_users_data %}
                         <tr>
                             <td>{{ u.user__username }}</td>
-                            <td>{{ u.amount }} 元</td>
+                            <td>{{ u.amount }} yuan</td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -95,14 +92,14 @@
             <div class="tile is-child box">
                 <article class="message is-success">
                     <div class="message-body">
-                        今日注册
+                        Registered Today
                     </div>
                 </article>
                 <table class="table is-hoverable is-fullwidth">
                     <thead>
                         <tr>
-                            <th>用户名</th>
-                            <th>邀请人</th>
+                            <th>User</th>
+                            <th>Inviter</th>
                         </tr>
                     </thead>
                     <tbody>

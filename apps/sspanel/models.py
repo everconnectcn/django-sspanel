@@ -841,7 +841,7 @@ class VmessNode(BaseAbstractNode):
     @property
     def human_speed_limit(self):
         # NOTE vemss目前不支持限速
-        return "不限速"
+        return "NoLimit"
 
     @property
     def api_endpoint(self):
@@ -1107,7 +1107,7 @@ class SSNode(BaseAbstractNode):
         if self.speed_limit != 0:
             return f"{round(self.speed_limit / self.MEGABIT, 1)} Mbps"
         else:
-            return "不限速"
+            return "NoLimit"
 
     @property
     def api_endpoint(self):

@@ -4,11 +4,8 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    用户列表：
+                    User List:
                 </h1>
-                <h2 class="subtitle">
-                    给衣食父母们请安了!
-                </h2>
             </div>
         </div>
     </section>
@@ -17,10 +14,10 @@
     <form method="get" action="{% url 'sspanel:admin_user_search' %}">
         <div class="field has-addons">
             <div class="control">
-                <input name="q" class="input" type="search" placeholder="用户名/邮箱 模糊搜索" required>
+                <input name="q" class="input" type="search" placeholder="Username/email 模糊搜索" required>
             </div>
             <div class="control">
-                <button type="submit" class="button is-outlined is-info">搜索</button>
+                <button type="submit" class="button is-outlined is-info">Search</button>
             </div>
         </div>
     </form>
@@ -28,10 +25,10 @@
     <div class="box">
         <nav class="pagination">
             {% if contacts.has_previous %}
-            <a class="pagination-previous" href="?page={{ contacts.previous_page_number }}">上一页</a> {% endif %}
+            <a class="pagination-previous" href="?page={{ contacts.previous_page_number }}">Previous</a> {% endif %}
             {% if contacts.has_next%}
-            <a class="pagination-next" href="?page={{ contacts.next_page_number }}">下一页</a> {% endif %} {% if page %}
-            <p>页码：</p>
+            <a class="pagination-next" href="?page={{ contacts.next_page_number }}">Next</a> {% endif %} {% if page %}
+            <p>PageNo:</p>
             <ul class="pagination-list">
                 {% if first %}
                 <a href="?page=1" class="pagination-link">1</a>
@@ -56,22 +53,22 @@
             <table class="table is-fullwidth">
                 <thead>
                     <tr>
-                        <th>操作:</th>
+                        <th>Operation:</th>
                         <th>ID:</th>
-                        <th>用户名</th>
-                        <th>邮箱:</th>
-                        <th>端口:</th>
-                        <th>已用/总流量</th>
+                        <th>User:</th>
+                        <th>Email:</th>
+                        <th>Port:</th>
+                        <th>Used/Total Traffic</th>
                     </tr>
                 </thead>
                 {% for contact in contacts %}
                 <tr>
                     <td>
                         <p class="control">
-                            <a class="button is-info" href="{% url 'sspanel:admin_user_detail' contact.pk %}">编辑</a>
+                            <a class="button is-info" href="{% url 'sspanel:admin_user_detail' contact.pk %}">edit</a>
                         </p>
                         <p class="control">
-                            <a class="button is-danger modal-button" data-target="modal-{{ contact.pk }}">删除</a>
+                            <a class="button is-danger modal-button" data-target="modal-{{ contact.pk }}">delete</a>
                         </p>
                     </td>
                     <td>#{{ contact.id}}</td>
@@ -86,21 +83,21 @@
                     <div class="modal-background"></div>
                     <div class="modal-card">
                         <header class="modal-card-head">
-                            <p class="modal-card-title">用户名:{{ contact.username }}</p>
+                            <p class="modal-card-title">username:{{ contact.username }}</p>
                             <button class="delete"></button>
                         </header>
                         <section class="modal-card-body">
-                            <p class="subtitle">确定要删除:
+                            <p class="subtitle">Confirm Delete:
                                 <code>{{ contact.username }}</code>?</p>
                             <p align="center">
                                 <a class="button is-danger is-outlined"
-                                    href="{% url 'sspanel:admin_user_delete' contact.pk %}">确定删除</a>
+                                    href="{% url 'sspanel:admin_user_delete' contact.pk %}">Confirm Deletion</a>
                             </p>
                         </section>
                     </div>
                 </div>
                 {% empty %}
-                <p class="subtitle">没有用户哟</p>
+                <p class="subtitle">no user yet</p>
                 {% endfor %}
             </table>
         </div>
