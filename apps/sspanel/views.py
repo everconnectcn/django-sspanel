@@ -95,7 +95,7 @@ class UserLogInView(View):
 class UserLogOutView(View):
     def get(self, request):
         logout(request)
-        messages.warning(request, "欢迎下次再来", extra_tags="注销成功")
+        messages.warning(request, "see you next time", extra_tags="Logout Success")
         return HttpResponseRedirect(reverse("sspanel:index"))
 
 
@@ -270,7 +270,7 @@ class TicketCreateView(LoginRequiredMixin, View):
         return render(request, "sspanel/ticketcreate.html")
 
     def post(self, request):
-        """工单提交"""
+        """工单Submit"""
         title = request.POST.get("title", "")
         body = request.POST.get("body", "")
         Ticket.objects.create(user=request.user, title=title, body=body)

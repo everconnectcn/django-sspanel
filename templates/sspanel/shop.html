@@ -8,7 +8,7 @@
                     Goods List:
                 </h1>
                 <h2 class="subtitle">
-                    PY站长获得充值码 or
+                    Scan QRCode to purchase MoneyCode or
                     <a href="{% url 'sspanel:donate' %}">
                         <strong>Donate</strong>
                     </a> only alipay supported for now.
@@ -58,8 +58,8 @@
                     <strong>Upgrade to Level</strong>
                     <code> {{ good.level }}</code>
                     <br>
-                    <strong>等级有效期：</strong>
-                    <code>{{ good.days }} 天</code>
+                    <strong>Level will expire in</strong>
+                    <code>{{ good.days }} days</code>
                 </div>
             </div>
         </div>
@@ -81,8 +81,8 @@
                     <strong>Upgrade to Level</strong>
                     <code> {{ good.level }}</code>
                     <br>
-                    <strong>等级有效期：</strong>
-                    <code>{{ good.days }} 天</code>
+                    <strong>Level will expire in</strong>
+                    <code>{{ good.days }} days</code>
                     <br>
                     <br>
                     <a class="button is-danger is-outlined" id="id-button-pruchase">Confirm Purchase</a>

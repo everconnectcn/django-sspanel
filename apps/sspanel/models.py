@@ -40,8 +40,8 @@ class User(AbstractUser):
     SUB_TYPE_CLASH = 3
     SUB_TYPES_SET = {SUB_TYPE_SS, SUB_TYPE_VMESS, SUB_TYPE_ALL, SUB_TYPE_CLASH}
     SUB_TYPES = (
-        (SUB_TYPE_SS, "只订阅SS"),
-        (SUB_TYPE_VMESS, "只订阅Vmess"),
+        (SUB_TYPE_SS, "只Subscribe SS"),
+        (SUB_TYPE_VMESS, "只Subscribe Vmess"),
         (SUB_TYPE_ALL, "订阅所有"),
         (SUB_TYPE_CLASH, "通过Clash订阅所有"),
     )

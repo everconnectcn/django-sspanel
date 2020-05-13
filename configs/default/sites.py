@@ -37,7 +37,7 @@ INVITE_PERCENT = 0.2
 INVITE_NUM = 5
 
 # 网站邀请界面提示语
-INVITEINFO = "Invite codes are updated in realtime, 如果用完了就没了"
+INVITEINFO = "Invite codes are updated in realtime"
 
 
 # 部分API接口TOKEN

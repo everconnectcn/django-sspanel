@@ -365,7 +365,7 @@ def change_sub_type(request):
     user = request.user
     user.sub_type = sub_type
     user.save()
-    res = {"title": "修改成功！", "subtitle": "订阅类型更换成功!", "status": "success"}
+    res = {"title": "修改成功！", "subtitle": "Subscribe 类型更换成功!", "status": "success"}
     return JsonResponse(res)
 
 
