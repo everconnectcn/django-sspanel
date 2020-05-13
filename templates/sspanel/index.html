@@ -2,9 +2,8 @@
 <br /> {% if user.is_authenticated %}
 <div class="box">
     <p class="title">Welcome: {{ user.username }}</p>
-    <p class="subtitle">点击下方按钮进入UserCenter </p>
     <button class="button">
-        <a href="{% url 'sspanel:userinfo' %}">进入</a>
+        <a href="{% url 'sspanel:userinfo' %}">Login</a>
     </button>
 
 </div>

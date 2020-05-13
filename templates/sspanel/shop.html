@@ -8,10 +8,10 @@
                     Goods List:
                 </h1>
                 <h2 class="subtitle">
-                    PY站长获得充值码 或者
+                    PY站长获得充值码 or
                     <a href="{% url 'sspanel:donate' %}">
-                        <strong>捐赠</strong>
-                    </a>那支持支付宝!
+                        <strong>Donate</strong>
+                    </a> only alipay supported for now.
                 </h2>
             </div>
         </div>
@@ -52,11 +52,11 @@
                     <strong>price:</strong>
                     <code>{{ good.money }}yuan</code>
                     <br>
-                    <strong>流量：</strong>
+                    <strong>Traffic:</strong>
                     <code>{{ good.total_transfer }}</code>
                     <br>
-                    <strong>提升等级至：</strong>
-                    <code>{{ good.level }} 级</code>
+                    <strong>Upgrade to Level</strong>
+                    <code> {{ good.level }}</code>
                     <br>
                     <strong>等级有效期：</strong>
                     <code>{{ good.days }} 天</code>
@@ -75,11 +75,11 @@
                     <strong>price:</strong>
                     <code>{{ good.money }}yuan</code>
                     <br>
-                    <strong>流量：</strong>
+                    <strong>Traffic:</strong>
                     <code>{{ good.total_transfer }} GB</code>
                     <br>
-                    <strong>提升等级至：</strong>
-                    <code>{{ good.level }} 级</code>
+                    <strong>Upgrade to Level</strong>
+                    <code> {{ good.level }}</code>
                     <br>
                     <strong>等级有效期：</strong>
                     <code>{{ good.days }} 天</code>

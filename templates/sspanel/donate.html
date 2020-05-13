@@ -22,7 +22,7 @@
                 <p class="subtitle">请在下方输入
                     <strong>充值/捐赠金额</strong>
                 </p>
-                <p>点击提交会弹出
+                <p>点击Submit会弹出
                     <strong>支付宝二维码</strong>
                     <br>扫描二维码确认付款之后
                     <br>账户里会增加对应的金额</p>
@@ -61,7 +61,7 @@
             <div class="tile box is-child">
                 <p class="subtitle">本站通过充值码进行充值:</p>
                 <hr>
-                <p class="subtitle">扫描站长支付宝PY获得充值码：</p>
+                <p class="subtitle">Scan below Alipay QRCode to purchase MoneyCode</p>
                 <figure class="image">
                     <img src="{% static '/img/alipay.png'%}">
                 </figure>
@@ -120,7 +120,7 @@
                 swal(info.title, info.subtitle, info.status)
             })
         } else {
-            swal('Error', '金额必须为整数且最少为一元', 'error')
+            swal('Error', 'The amount must be an integer and at least 1 yuan', 'error')
         }
     }
     requestButton.click(payrequest)
@@ -128,7 +128,7 @@
     // 支付查询部分
     queryButton = $("#id-button-query")
     var payquery = function () {
-        msgline.html('后台飞速查询结果中 请稍候....')
+        msgline.html('processing, please hang on...')
         $.getJSON(url, function (results) {
             info = results.info
             swal(info.title, info.subtitle, info.status)

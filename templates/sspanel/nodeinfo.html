@@ -50,7 +50,7 @@
                             <p>Speed Limit:<code>{{ node.human_speed_limit }}</code></p>
                             {% endif %}
                             {%if node.enlarge_scale != 1.00 %}
-                            <p>流量倍率：<code>{{ node.enlarge_scale }}</code></p>
+                            <p> Traffic Multiplier:<code>{{ node.enlarge_scale }}</code></p>
                             {% endif %}
                         </div>
                     </div>
@@ -92,7 +92,7 @@
                                     </tr>
                                 </table>
                                 <p class="subtitle">Configuration Link</p>
-                                <a href={{ node.ss_link }}>手机上用默认浏览器打开点我就可以直接添加配置(SS版)</a>
+                                <a href={{ node.ss_link }}>Click here on you smartphone to add this config (SS)</a>
                             </section>
                         </div>
                     </div>
@@ -118,9 +118,9 @@
                     <div class="card-content">
                         <article class="message is-danger">
                             <div class="message-body">
-                                <p>该线路为VIP线路
-                                    <strong>购买对应商品 提升至等级:「{{node.level}}」后</strong> 才能看见节点配置哟！</p>
-                                <a class="is-link" href="{% url 'sspanel:shop' %}">点我购买！</a>
+                                <p>This is a VIP channel.
+                                    <strong>To purchase, please upgrade to Level:「{{node.level}}」</strong></p>
+                                <a class="is-link" href="{% url 'sspanel:shop' %}">Click to purchase</a>
                             </div>
                         </article>
                     </div>
@@ -168,7 +168,7 @@
                         <div class="content">
                             <p>{{ node.info }}</p>
                             {%if node.enlarge_scale != 1.00 %}
-                            <p>流量倍率：<code>{{ node.enlarge_scale }}</code></p>
+                            <p>Traffic Multiplier:<code>{{ node.enlarge_scale }}</code></p>
                             {% endif %}
                         </div>
                     </div>
@@ -240,12 +240,12 @@
                                 {% if node.enable_relay %}
                                 {% for rule in node.relay_rules %}
                                 <p class="subtitle">Configuration Link - {{ rule.remark }}：</p>
-                                <a href={{ rule.relay_link }}>手机上用默认浏览器打开点我就可以直接添加配置(Vmess)</a>
+                                <a href={{ rule.relay_link }}>Click here on you smartphone to add this config (Vmess)</a>
                                 <hr>
                                 {% endfor%}
                                 {% else %}
                                 <p class="subtitle">Configuration Link:</p>
-                                <a href={{ node.vmess_link }}>手机上用默认浏览器打开点我就可以直接添加配置(Vmess)</a>
+                                <a href={{ node.vmess_link }}>Click here on you smartphone to add this config (Vmess)</a>
                                 {% endif %}
                             </section>
                         </div>
@@ -282,9 +282,9 @@
                     <div class="card-content">
                         <article class="message is-danger">
                             <div class="message-body">
-                                <p>该线路为VIP线路
-                                    <strong>购买对应商品 提升至等级:「{{node.level}}」后</strong> 才能看见节点配置哟！</p>
-                                <a class="is-link" href="{% url 'sspanel:shop' %}">点我购买！</a>
+                                <p>This is a VIP channel.
+                                    <strong>To purchase, please upgrade to Level:「{{node.level}}」</strong></p>
+                                <a class="is-link" href="{% url 'sspanel:shop' %}">Click to purchase</a>
                             </div>
                         </article>
                     </div>

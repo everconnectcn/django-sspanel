@@ -5,7 +5,7 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    返利记录：最新的10条记录
+                    Rebate Log: latest 10 record
                 </h1>
             </div>
         </div>
@@ -20,14 +20,14 @@
                 <thead>
                     <tr>
                         <th>user</th>
-                        <th>金额</th>
-                        <th>购买时间</th>
+                        <th>amuont</th>
+                        <th>created at</th>
                     </tr>
                 </thead>
                 {% for log in rebate_logs %}
                 <tr>
                     <td>{{ log.consumer_username|mix_name:log.consumer_username }}</td>
-                    <td>{{ log.money }}元</td>
+                    <td>{{ log.money }}yuan</td>
                     <td>{{ log.created_at }}</td>
                 </tr>
                 {% endfor %}

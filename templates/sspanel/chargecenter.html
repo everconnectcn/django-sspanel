@@ -4,10 +4,10 @@
         <div class="hero-body">
             <div class="container">
                 <h1 class="title">
-                    充值中心：
+                    Gift Card Center:
                 </h1>
                 <h2 class="subtitle">
-                    请在下方输方输入充值码....
+                  Input Your Gift Card Code Below:
                 </h2>
             </div>
         </div>
@@ -33,28 +33,28 @@
     <div class="box ">
         <form class="form" method="post">
             {% csrf_token %}
-            <input type="text" name="chargecode" class="input " required="" id="chargecode" placeholder="请输入充值码">
+            <input type="text" name="chargecode" class="input " required="" id="chargecode" placeholder="input your gift card code">
             <hr/>
             <div class="is-grouped">
-                <button type="submit" class="button is-danger is-outlined ">充值</button>
+                <button type="submit" class="button is-danger is-outlined ">Pop Up</button>
             </div>
         </form>
     </div>
     <div class="box">
         <div class="content">
-            <p class="subtitle">充值记录：</p>
+            <p class="subtitle">Pop Up Log:</p>
             <table class="table is-striped">
                 <thead>
                     <tr>
-                        <th>时间:</th>
-                        <th>代码:</th>
-                        <th>金额:</th>
-                        <th>使用:</th>
+                        <th>date:</th>
+                        <th>code:</th>
+                        <th>amount:</th>
+                        <th>is used:</th>
                     </tr>
                 </thead>
                 {% for code in codelist %}
                 <tr>
-                    <td>{{ code.time|date:"m,d,yyyy" }}</td>
+                    <td>{{ code.time|date:"mm,dd,yyyy" }}</td>
                     <td>{{ code.code }}</td>
                     <td>{{ code.number }}</td>
                     <td>{{ code.isused }}</td>
