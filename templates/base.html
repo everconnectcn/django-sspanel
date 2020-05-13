@@ -62,12 +62,12 @@
                     <a class="navbar-item" href="{% url 'sspanel:nodeinfo' %}">Nodes info</a>
                     <a class="navbar-item" href="{% url 'sspanel:user_traffic_log' %}">Traffic log</a>
                     <a class="navbar-item is-active">Transation related</a>
-                    <a class="navbar-item" href="{% url 'sspanel:donate' %}">捐赠付费</a>
-                    <a class="navbar-item" href="{% url 'sspanel:chargecenter' %}">充值界面</a>
+                    <a class="navbar-item" href="{% url 'sspanel:donate' %}">Donate/Pay</a>
+                    <a class="navbar-item" href="{% url 'sspanel:chargecenter' %}">Pop Up</a>
                     <a class="navbar-item" href="{% url 'sspanel:shop' %}">Goods</a>
                     <a class="navbar-item" href="{% url 'sspanel:purchaselog' %}">Purchase log</a>
                     <a class="navbar-item is-active">Invitation related</a>
-                    <a class="navbar-item" href="{% url 'sspanel:aff_invite' %}">邀请返利</a>
+                    <a class="navbar-item" href="{% url 'sspanel:aff_invite' %}">Affiliate/Rebate</a>
                     <a class="navbar-item" href="{% url 'sspanel:aff_status' %}">Rebate log</a>
                     {% if perms.sspanel %}
                     <a class="navbar-item is-active">Management Panel</a>
@@ -123,10 +123,10 @@
                         </p>
                         <ul class="menu-list">
                             <li>
-                                <a href="{% url 'sspanel:donate' %}">捐赠付费</a>
+                                <a href="{% url 'sspanel:donate' %}">Donate/Pay</a>
                             </li>
                             <li>
-                                <a href="{% url 'sspanel:chargecenter' %}">充值界面</a>
+                                <a href="{% url 'sspanel:chargecenter' %}">Pop Up</a>
                             </li>
                             <li>
                                 <a href="{% url 'sspanel:shop' %}">Goods</a>
@@ -140,7 +140,7 @@
                         </p>
                         <ul class="menu-list">
                             <li>
-                                <a href="{% url 'sspanel:aff_invite' %}">邀请返利</a>
+                                <a href="{% url 'sspanel:aff_invite' %}">Affiliate/Rebate</a>
                             </li>
                             <li>
                                 <a href="{% url 'sspanel:aff_status' %}">Rebate log</a>

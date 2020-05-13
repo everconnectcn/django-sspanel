@@ -7,7 +7,7 @@
                     Donor List:
                 </h1>
                 <h2 class="subtitle">
-                    捐赠的金额会自动同步到账户余额里去~
+                    Money you donated will be your balance
                 </h2>
             </div>
         </div>
@@ -19,8 +19,8 @@
             {% settings_value "USE_ALIPAY" as use_alipay %}
             {% if use_alipay %}
             <div class="tile box is-child">
-                <p class="subtitle">请在下方输入
-                    <strong>充值/捐赠金额</strong>
+                <p class="subtitle">Input
+                    <strong>Pop up/donate amount</strong>
                 </p>
                 <p>点击Submit会弹出
                     <strong>支付宝二维码</strong>
@@ -59,7 +59,7 @@
             </div>
             {% else %}
             <div class="tile box is-child">
-                <p class="subtitle">本站通过充值码进行充值:</p>
+                <p class="subtitle">Pop up through MoneyCode:</p>
                 <hr>
                 <p class="subtitle">Scan below Alipay QRCode to purchase MoneyCode</p>
                 <figure class="image">
