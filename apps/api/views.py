@@ -1,4 +1,6 @@
 import pendulum
+import stripe
+import json
 from django.conf import settings
 from django.contrib.auth.decorators import login_required, permission_required
 from django.http import HttpResponse, HttpResponseNotFound, JsonResponse
@@ -410,3 +412,39 @@ class OrderView(View):
         return JsonResponse(
             {"info": info, "qrcode_url": order.qrcode_url, "order_id": order.id}
         )
+
+
+# @require_http_methods(["POST"])
+# def stripe_api(request):
+#     good_id = request.POST.get("goodId")
+#     good = Goods.objects.get(id=good_id)
+#     if not good.purchase_by_user(request.user):
+#         return JsonResponse(
+#             {"title": "金额不足！", "status": "error", "subtitle": "请去捐赠界面/联系站长充值"}
+#         )
+#     else:
+#         return JsonResponse(
+#             {"title": "购买成功", "status": "success", "subtitle": "请在UserCenter检查最新信息"}
+#         )
+stripe.api_key = settings.STRIPE_SECRET_KEY  # new
+
+
+def calculate_order_amount(items):
+    return 4568
+
+
+@csrf_exempt
+@require_http_methods(["POST"])
+def create_payment(request):
+    try:
+        data = json.loads(request.data)
+        intent = stripe.PaymentIntent.create(
+            amount=calculate_order_amount(data['items']),
+            currency='usd'
+        )
+
+        return JsonResponse({
+            'clientSecret': intent['client_secret']
+        })
+    except Exception as e:
+        return JsonResponse(error=str(e)), 403

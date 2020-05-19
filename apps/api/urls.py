@@ -45,4 +45,5 @@ urlpatterns = [
         views.UserTrafficChartView.as_view(),
         name="user_traffic_chart",
     ),
+    path("create-payment-intent",views.create_payment, name="create-payment-intent")
 ]

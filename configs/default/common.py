@@ -84,3 +84,6 @@ AUTHENTICATION_BACKENDS = (
 
 # 用户模型设置：
 AUTH_USER_MODEL = "sspanel.User"
+
+STRIPE_SECRET_KEY='sk_test_tAmci4gVQozuaWoWyxsCxEXg00UbHmVlzw'
+STRIPE_PUBLISHABLE_KEY='pk_test_d8fj8wJrH7SCIzwrmdr8bdxp00Nfx8tFEL'
