@@ -437,7 +437,7 @@ def calculate_order_amount(items):
 @require_http_methods(["POST"])
 def create_payment(request):
     try:
-        data = json.loads(request.data)
+        data = json.loads(request.body)
         intent = stripe.PaymentIntent.create(
             amount=calculate_order_amount(data['items']),
             currency='usd'
